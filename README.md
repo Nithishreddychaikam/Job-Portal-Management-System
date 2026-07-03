@@ -3,7 +3,6 @@
 </p>
 
 # 💼 Job Portal Management System
-# 💼 Job Portal Management System
 
 A full-stack Job Portal Management System that enables candidates to search and apply for jobs, recruiters to manage job postings and applications, and administrators to monitor the platform. The application is built using **Spring Boot**, **MongoDB**, **Spring Security**, and **Thymeleaf**, with **OTP-based email verification** for secure user registration.
 
