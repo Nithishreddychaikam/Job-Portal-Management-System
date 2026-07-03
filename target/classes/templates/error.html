@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: html}">
+<head>
+    <title>Error - JobPortal Pro</title>
+</head>
+<body>
+    <th:block th:fragment="content">
+        <div style="text-align: center; max-width: 600px; margin: 4rem auto;">
+            <h1 style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;">Oops!</h1>
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Something went wrong.</h2>
+            
+            <div class="alert alert-error" th:if="${errorMsg != null}" th:text="${errorMsg}">
+                An unexpected error occurred.
+            </div>
+            <div class="alert alert-error" th:if="${errorMsg == null}">
+                The page you're looking for threw an error. Please try again.
+            </div>
+
+            <a th:href="@{/}" class="btn btn-primary" style="margin-top: 2rem;">Return to Homepage</a>
+        </div>
+    </th:block>
+</body>
+</html>

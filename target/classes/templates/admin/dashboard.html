@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout('Admin Dashboard', ~{::content})}">
+<body>
+<div th:fragment="content" class="d-flex w-100" style="min-height: calc(100vh - 65px);">
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/sidebar :: sidebar('dashboard')}"></div>
+
+    <!-- Main Panel -->
+    <div class="flex-grow-1 p-4 bg-light overflow-auto">
+        <div class="mb-4">
+            <h3 class="fw-bold mb-1">System Overview</h3>
+            <p class="text-muted mb-0">Platform analytics and administrative controls.</p>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 border-0 border-top border-primary border-4 p-4 text-center hover-up">
+                    <h6 class="text-muted text-uppercase fw-semibold mb-3">Total Users</h6>
+                    <div class="display-4 fw-bold text-primary mb-3" th:text="${totalUsers}">0</div>
+                    <a th:href="@{/admin/users}" class="text-decoration-none fw-semibold">View All Users <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 border-0 border-top border-success border-4 p-4 text-center hover-up">
+                    <h6 class="text-muted text-uppercase fw-semibold mb-3">Total Jobs</h6>
+                    <div class="display-4 fw-bold text-success mb-3" th:text="${totalJobs}">0</div>
+                    <a th:href="@{/admin/jobs}" class="text-decoration-none fw-semibold text-success">View All Jobs <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 border-0 border-top border-warning border-4 p-4 text-center hover-up">
+                    <h6 class="text-muted text-uppercase fw-semibold mb-3">Total Applications</h6>
+                    <div class="display-4 fw-bold text-warning mb-3" th:text="${totalApplications}">0</div>
+                    <a th:href="@{/admin/applications}" class="text-decoration-none fw-semibold text-warning">View Applications <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>

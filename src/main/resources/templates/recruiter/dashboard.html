@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout('Recruiter Dashboard', ~{::content})}">
+<body>
+<div th:fragment="content" class="d-flex w-100" style="min-height: calc(100vh - 65px);">
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/sidebar :: sidebar('dashboard')}"></div>
+
+    <!-- Main Panel -->
+    <div class="flex-grow-1 p-4 bg-light overflow-auto">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h3 class="fw-bold mb-1">Recruiter Workbench</h3>
+                <p class="text-muted mb-0">Manage your job postings and applicants.</p>
+            </div>
+            <a th:href="@{/recruiter/post-job}" class="btn btn-primary shadow-sm fw-semibold"><i class="bi bi-plus-circle me-2"></i>Post New Job</a>
+        </div>
+
+
+
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="mb-0 fw-bold"><i class="bi bi-briefcase-fill me-2 text-primary"></i>My Posted Jobs</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light text-muted">
+                            <tr>
+                                <th class="ps-4 py-3">Job Title</th>
+                                <th>Posted On</th>
+                                <th>Location</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(jobs)}">
+                                <td colspan="4" class="text-center py-5 text-muted">
+                                    <i class="bi bi-folder-x fs-1 d-block mb-2 text-secondary opacity-50"></i>
+                                    You haven't posted any jobs yet. <a th:href="@{/recruiter/post-job}" class="text-decoration-none fw-semibold">Create one now</a>.
+                                </td>
+                            </tr>
+                            <tr th:each="job : ${jobs}">
+                                <td class="ps-4 fw-bold text-dark" th:text="${job.title}">Developer</td>
+                                <td class="text-secondary" th:text="${#temporals.format(job.postedAt, 'dd MMM yyyy')}">10 Oct</td>
+                                <td class="text-secondary"><i class="bi bi-geo-alt me-1"></i><span th:text="${job.location}">Remote</span></td>
+                                <td class="text-center">
+                                    <div class="btn-group shadow-sm">
+                                        <a th:href="@{/recruiter/applications/{id}(id=${job.id})}" class="btn btn-sm btn-outline-primary fw-semibold"><i class="bi bi-people-fill me-1"></i>Applicants</a>
+                                        <a th:href="@{/recruiter/delete-job/{id}(id=${job.id})}" class="btn btn-sm btn-outline-danger fw-semibold" onclick="return confirm('Are you sure you want to delete this job permanently?');"><i class="bi bi-trash-fill"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<!-- Generic Sidebar Fragment -->
+<div th:fragment="sidebar(activeMenu)" class="sidebar p-3 d-flex flex-column bg-white border-end" style="width: 250px; min-height: calc(100vh - 65px);">
+    
+    <!-- Candidate Navigation -->
+    <ul class="nav nav-pills flex-column mb-auto" sec:authorize="hasRole('ROLE_CANDIDATE')">
+        <li class="nav-item">
+            <a th:href="@{/candidate/dashboard}" class="nav-link" th:classappend="${activeMenu == 'dashboard'} ? 'active' : ''">
+                <i class="bi bi-house-door"></i>
+                Dashboard
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/candidate/profile}" class="nav-link" th:classappend="${activeMenu == 'profile'} ? 'active' : ''">
+                <i class="bi bi-person"></i>
+                My Profile
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/candidate/jobs}" class="nav-link" th:classappend="${activeMenu == 'jobs'} ? 'active' : ''">
+                <i class="bi bi-search"></i>
+                Find Jobs
+            </a>
+        </li>
+    </ul>
+
+    <!-- Recruiter Navigation -->
+    <ul class="nav nav-pills flex-column mb-auto" sec:authorize="hasRole('ROLE_RECRUITER')">
+        <li class="nav-item">
+            <a th:href="@{/recruiter/dashboard}" class="nav-link" th:classappend="${activeMenu == 'dashboard'} ? 'active' : ''">
+                <i class="bi bi-speedometer2"></i>
+                Dashboard
+            </a>
+        </li>
+        <li class="nav-item mt-2">
+            <a th:href="@{/recruiter/post-job}" class="btn btn-primary w-100 fw-semibold text-start shadow-sm">
+                <i class="bi bi-plus-circle me-2"></i>Post Job
+            </a>
+        </li>
+    </ul>
+
+    <!-- Admin Navigation -->
+    <ul class="nav nav-pills flex-column mb-auto" sec:authorize="hasRole('ROLE_ADMIN')">
+        <li class="nav-item">
+            <a th:href="@{/admin/dashboard}" class="nav-link" th:classappend="${activeMenu == 'dashboard'} ? 'active' : ''">
+                <i class="bi bi-pie-chart"></i>
+                Overview
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/admin/users}" class="nav-link" th:classappend="${activeMenu == 'users'} ? 'active' : ''">
+                <i class="bi bi-people"></i>
+                Manage Users
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/admin/jobs}" class="nav-link" th:classappend="${activeMenu == 'jobs'} ? 'active' : ''">
+                <i class="bi bi-briefcase"></i>
+                Manage Jobs
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/admin/applications}" class="nav-link" th:classappend="${activeMenu == 'applications'} ? 'active' : ''">
+                <i class="bi bi-file-earmark-text"></i>
+                Applications
+            </a>
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout('Home - JobPortal Pro', ~{::content})}">
+<body>
+<div th:fragment="content">
+    
+    <!-- Hero Section -->
+    <section class="bg-primary text-white text-center py-5 mb-5 shadow-sm" style="background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold mb-4">Find Your Dream Job Today</h1>
+            <p class="lead mb-5 col-md-8 mx-auto opacity-75">Connect with top companies, build your profile, and fast-track your career with our next-gen hiring portal.</p>
+            
+            <div class="card p-4 mx-auto shadow-lg border-0" style="max-width: 800px; border-radius: 1rem;">
+                <form th:action="@{/candidate/jobs}" method="GET" class="row g-2 align-items-center justify-content-center">
+                    <div class="col-md-9">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                            <input type="text" name="keyword" class="form-control border-start-0" placeholder="Search by Job title, skills, or location...">
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg fw-semibold">Search Jobs</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div sec:authorize="!isAuthenticated()" class="mt-5 d-flex gap-3 justify-content-center flex-wrap">
+                <a th:href="@{/register/candidate}" class="btn btn-light btn-lg px-4 fw-semibold text-primary">I'm a Candidate</a>
+                <a th:href="@{/register/recruiter}" class="btn btn-outline-light btn-lg px-4 fw-semibold border-2">I'm a Recruiter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container pb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Choose Us?</h2>
+            <p class="text-muted">A platform designed for speed and trust.</p>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4 border-0 shadow-sm transition-hover">
+                    <div class="card-body">
+                        <div class="display-4 text-primary mb-3"><i class="bi bi-lightning-charge"></i></div>
+                        <h4 class="card-title fw-bold">Fast Applications</h4>
+                        <p class="card-text text-muted">Apply to multiple jobs instantly with your saved resume and profile data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4 border-0 shadow-sm transition-hover">
+                    <div class="card-body">
+                        <div class="display-4 text-success mb-3"><i class="bi bi-building-check"></i></div>
+                        <h4 class="card-title fw-bold">Top Companies</h4>
+                        <p class="card-text text-muted">Directly interact with verified recruiters from industry-leading enterprises.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4 border-0 shadow-sm transition-hover">
+                    <div class="card-body">
+                        <div class="display-4 text-warning mb-3"><i class="bi bi-shield-check"></i></div>
+                        <h4 class="card-title fw-bold">Secure Portal</h4>
+                        <p class="card-text text-muted">We use AES tracking and standard compliance logic to protect your data forever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

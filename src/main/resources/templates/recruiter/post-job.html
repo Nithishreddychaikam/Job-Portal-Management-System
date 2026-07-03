@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout('Post a Job', ~{::content})}">
+<body>
+<div th:fragment="content" class="d-flex w-100" style="min-height: calc(100vh - 65px);">
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/sidebar :: sidebar('dashboard')}"></div>
+
+    <!-- Main Panel -->
+    <div class="flex-grow-1 p-4 bg-light overflow-auto">
+        <div class="mb-4">
+            <h3 class="fw-bold mb-1">Post a New Job</h3>
+            <p class="text-muted mb-0">Fill out the details below to attract top talent.</p>
+        </div>
+
+        <div class="card shadow-sm border-0 mx-auto" style="max-width: 850px;">
+            <div class="card-body p-4 p-md-5">
+                <form th:action="@{/recruiter/post-job}" th:object="${jobDto}" method="POST">
+                    
+                    <h5 class="fw-bold text-primary mb-4 border-bottom pb-2"><i class="bi bi-file-earmark-text me-2"></i>Job Basics</h5>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Job Title / Designation</label>
+                        <input type="text" th:field="*{title}" class="form-control" required placeholder="e.g. Senior Software Engineer">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Job Description</label>
+                        <textarea th:field="*{description}" class="form-control" rows="6" required placeholder="Describe the role, responsibilities, and perks..."></textarea>
+                    </div>
+                    
+                    <h5 class="fw-bold text-primary mb-4 border-bottom pb-2 mt-5"><i class="bi bi-sliders me-2"></i>Requirements & Logistics</h5>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Skills Required</label>
+                        <input type="text" th:field="*{skillsRequired}" class="form-control" required placeholder="e.g. Java, Microservices, React (Comma Separated)">
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <label class="form-label fw-semibold">Experience Necessary</label>
+                            <input type="text" th:field="*{experienceRequired}" class="form-control" required placeholder="e.g. 3-5 Years">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-semibold">Salary (CTC)</label>
+                            <input type="text" th:field="*{salary}" class="form-control" required placeholder="e.g. $100K - $120K">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-semibold">Location</label>
+                            <input type="text" th:field="*{location}" class="form-control" required placeholder="e.g. Remote, Bangalore">
+                        </div>
+                    </div>
+
+                    <div class="mt-5 pt-4 text-end border-top">
+                        <a th:href="@{/recruiter/dashboard}" class="btn btn-light me-2 fw-semibold border">Cancel</a>
+                        <button type="submit" class="btn btn-primary px-5 py-2 fw-bold shadow-sm">Post Job Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
