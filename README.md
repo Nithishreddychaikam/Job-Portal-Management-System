@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="screenshots/banner.png" alt="Job Portal Management System Banner" width="100%">
+</p>
+
+# 💼 Job Portal Management System
 # 💼 Job Portal Management System
 
 A full-stack Job Portal Management System that enables candidates to search and apply for jobs, recruiters to manage job postings and applications, and administrators to monitor the platform. The application is built using **Spring Boot**, **MongoDB**, **Spring Security**, and **Thymeleaf**, with **OTP-based email verification** for secure user registration.
@@ -192,23 +197,47 @@ http://localhost:8080
 ```
 
 ---
-
 # 📸 Screenshots
 
-Add screenshots here later.
+## 🏠 Home Page
 
-Suggested screenshots:
+![Home Page](screenshots/home.png)
 
-- Home Page
-- Login Page
-- Candidate Dashboard
-- Recruiter Dashboard
-- Admin Dashboard
-- Job Search
-- Job Details
-- Application Tracking
-- OTP Verification
-- MongoDB Collections
+---
+
+## 📧 OTP Verification
+
+![OTP Verification](screenshots/otp-verification.png)
+
+---
+
+## 👨‍🎓 Candidate Dashboard
+
+![Candidate Dashboard](screenshots/candidate-dashboard.png)
+
+---
+
+## 🔍 Find Jobs
+
+![Find Jobs](screenshots/find-jobs.png)
+
+---
+
+## 📝 Apply for Jobs
+
+![Apply for Jobs](screenshots/apply-for-jobs.png)
+
+---
+
+## 🏢 Recruiter's Dashboard
+
+![Recruiter's Dashboard](screenshots/recruiter-dashboard.png)
+
+---
+
+## ➕ Post New Job
+
+![Post New Job](screenshots/post-new-job.png)
 
 ---
 
