@@ -1,0 +1,19 @@
+# Maven
+target/
+
+# Eclipse
+.settings/
+.factorypath
+
+# IntelliJ
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
