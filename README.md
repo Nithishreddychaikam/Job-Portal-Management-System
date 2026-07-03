@@ -259,7 +259,7 @@ http://localhost:8080
 
 **Chaikam Nithish Reddy**
 
-GitHub: https://github.com/Nithishreddychaikam
+[GitHub: https://github.com/Nithishreddychaikam](https://github.com/Nithishreddychaikam/Job-Portal-Management-System)
 
 ---
 
