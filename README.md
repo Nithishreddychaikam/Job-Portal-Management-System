@@ -200,43 +200,43 @@ http://localhost:8080
 
 ## 🏠 Home Page
 
-![Home Page](screenshots/home.png)
+![Home](Screenshots/home.png)
 
 ---
 
 ## 📧 OTP Verification
 
-![OTP Verification](screenshots/otp-verification.png)
+![OTP Verification](Screenshots/otp-verification.png)
 
 ---
 
 ## 👨‍🎓 Candidate Dashboard
 
-![Candidate Dashboard](screenshots/candidate-dashboard.png)
+![Candidate Dashboard](Screenshots/candidate-dashboard.png)
 
 ---
 
 ## 🔍 Find Jobs
 
-![Find Jobs](screenshots/find-jobs.png)
+![Find Jobs](Screenshots/find-jobs.png)
 
 ---
 
 ## 📝 Apply for Jobs
 
-![Apply for Jobs](screenshots/apply-for-jobs.png)
+![Apply for Jobs](Screenshots/apply-for-jobs.png)
 
 ---
 
-## 🏢 Recruiter's Dashboard
+## 🏢 Recruiter Dashboard
 
-![Recruiter's Dashboard](screenshots/recruiter-dashboard.png)
+![Recruiter Dashboard](Screenshots/recruiter-dashboard.png)
 
 ---
 
 ## ➕ Post New Job
 
-![Post New Job](screenshots/post-new-job.png)
+![Post New Job](Screenshots/post-new-job.png)
 
 ---
 
